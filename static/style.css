@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .chat-wrapper {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    background: #0072ff;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .chat-box {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #f4f7f9;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  .message {
+    display: flex;
+    margin-bottom: 12px;
+    animation: slideUp 0.3s ease-in-out;
+  }
+  
+  .message.user {
+    justify-content: flex-end;
+  }
+  
+  .message.bot {
+    justify-content: flex-start;
+  }
+  
+  .avatar {
+    font-size: 24px;
+    margin: 0 8px;
+  }
+  
+  .text {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 15px;
+    line-height: 1.4;
+    background: #eee;
+    color: #333;
+  }
+  
+  .message.user .text {
+    background: #daf8e3;
+    border-top-right-radius: 0;
+  }
+  
+  .message.bot .text {
+    background: #e2e2e2;
+    border-top-left-radius: 0;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+  }
+  
+  #user-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  button {
+    background: #0072ff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin-left: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #005edb;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
