@@ -1,3 +1,4 @@
+import os
 import json
 import random
 import numpy as np
@@ -6,7 +7,16 @@ from nltk.stem.porter import PorterStemmer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.preprocessing import LabelEncoder
 
-nltk.download('punkt')
+# Ensure NLTK uses a safe data directory for deployment
+nltk_data_path = os.path.join(os.path.dirname(__file__), "nltk_data")
+nltk.data.path.append(nltk_data_path)
+
+# Download 'punkt' tokenizer if not already available
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', download_dir=nltk_data_path)
+
 stemmer = PorterStemmer()
 
 def tokenize(sentence):
